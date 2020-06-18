@@ -28,7 +28,7 @@ const Login = ({ setAlert, login, clearErrors, auth: { isAuthenticated, error } 
         }
         // because we don't want to add clearErrors, setAlert as dependencies.
         // eslint-disable-next-line 
-    }, [error, isAuthenticated, props.history]);
+    }, [error, isAuthenticated, history]);
 
     const [user, setUser] = useState({
         email: '',
@@ -98,7 +98,9 @@ Login.propTypes = {
 }
 
 const mapStateToProps = state => {
-    auth: state.auth
+    return {
+        auth: state.auth
+    }
 }
 
 export default connect(mapStateToProps, { clearErrors, login, setAlert })(Login);

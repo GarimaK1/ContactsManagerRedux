@@ -10,6 +10,7 @@ import { logout } from '../../actions/authActions';
 const MyNavbar = ({ myTitle, iconProp, clearContacts, logout, auth: { isAuthenticated, user} }) => {
 
     const handleLogout = () => {
+        console.log('Inside handleLogout in navbar')
         logout();
         clearContacts();
     }
@@ -82,7 +83,9 @@ MyNavbar.defaultProps = {
 };
 
 const mapStateToProps = state => {
-    auth: state.auth
+    return {
+        auth: state.auth
+    }
 }
 
 export default connect(mapStateToProps, { logout, clearContacts })(MyNavbar);

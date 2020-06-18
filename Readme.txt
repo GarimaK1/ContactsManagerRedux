@@ -1,3 +1,4 @@
+Problem: Loading incorrect contacts for users.
 Note to self:
 I think after the problems that I faced in setting alerts for this project,
 it is very important that you have a uniform method of conveying messages
@@ -6,6 +7,8 @@ from the backend API. That make setting alerts such a breeze.
 -- Login page: if user is already authenticted, don't show login. Redirect to Home page '/'.
 
 -- Register page: if user is already authenticted, don't show register. Redirect to Home page '/'.
+
+-- mapStateToProps is an arrow function and needs to return part of state to be provided as props to component
 
 -- Event Handlers in React using Example:
 {/* <input type="text" onChange={handleChange} /> */}

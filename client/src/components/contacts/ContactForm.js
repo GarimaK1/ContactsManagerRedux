@@ -43,7 +43,7 @@ const ContactForm = (
             clearErrors();
         }
         // eslint-disable-next-line 
-    }, [error, current, contactContext]);
+    }, [error, current]);
 
     const { name, phone, email, type } = contact;
 
@@ -118,9 +118,9 @@ ContactForm.propTypes = {
     contact: PropTypes.object,
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = state => ({
     contact: state.contact
-}
+})
 
 export default connect(
     mapStateToProps, 

@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { getContacts } from '../../actions/contactActions';
 
-const Contacts = ({ getContacts, auth: { contacts, filtered, loading } }) => {
+const Contacts = ({ getContacts, contact: { contacts, filtered, loading } }) => {
 
     useEffect(() => {
         getContacts();
@@ -29,16 +29,17 @@ const Contacts = ({ getContacts, auth: { contacts, filtered, loading } }) => {
     } else {
         return(<MySpinner />)
     }
-    
 }
 
 Contacts.propTypes = {
     getContacts: PropTypes.func.isRequired,
-    auth: PropTypes.object
+    contact: PropTypes.object
 }
 
 const mapStateToProps = state => {
-    auth: state.auth
+    return {
+        contact: state.contact
+    }
 }
 
 export default connect(mapStateToProps, { getContacts })(Contacts);

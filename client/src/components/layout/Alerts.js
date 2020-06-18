@@ -13,7 +13,7 @@ const Alerts = ({ removeAlert, alerts }) => {
     }, [show]);
     
     return (
-        (alertContext.alerts.length > 0 && show) && alertContext.alerts.map(alert =>
+        (alerts.length > 0 && show) && alerts.map(alert =>
             < Alert 
                 key={alert.id} 
                 variant={`${alert.type}`} 
@@ -51,8 +51,8 @@ Alerts.propTypes = {
     alerts: PropTypes.array,
 };
 
-const mapStateToProps = state => {
+const mapStateToProps = state => ({
     alerts: state.alert
-}
+})
 
 export default connect(mapStateToProps, { removeAlert })(Alerts); 

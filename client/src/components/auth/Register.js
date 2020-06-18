@@ -28,7 +28,7 @@ const Register = ({ setAlert, register, clearErrors, auth: { error, isAuthentica
         }
         // because we don't want to add clearErrors, setAlert as dependencies.
         // eslint-disable-next-line 
-    }, [error, isAuthenticated, props.history]);
+    }, [error, isAuthenticated, history]);
 
     const [user, setUser] = useState({
         name: '',
@@ -133,8 +133,8 @@ Register.propTypes = {
     auth: PropTypes.object,
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = state => ({
     auth: state.auth
-}
+})
 
 export default connect(mapStateToProps, { setAlert, register, clearErrors })(Register);
