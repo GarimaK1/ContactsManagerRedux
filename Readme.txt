@@ -65,15 +65,15 @@ Ans) Because when App.js first loads and there is no user data, we don't want to
 With loadUser, we need token to get data. Therefore, just quietly check for token in App.js.
  
 setAuthToken is used once in App.js and inside loadUser() in AuthState.
-loadUser() is used in register(), login(), Home page. 
+loadUser() is used in register(), login(), useEffect of Contacts component. 
 
 If you only used the setAuthToken function in the App.js, it will only check for the token
 on the initial loading of the application. If user is not loaded/logged in/just registered, there
 will be no token and 'x-auth-token' header will be removed.
 
 We call setAuthToken in loadUser, and loadUser is called on registration. loadUser is also called 
-when Home page loads. So, when a user registers or home page reloads, loadUser is run and token is
-sent for all subsequesnt axios calls. 
+when Contacts component loads. So, when a user registers or home page reloads: reloading the contacts, 
+loadUser is run and token is sent for all subsequesnt axios calls. 
 
 -- Protected routes
 HomePage got protected against unauthorized viewing by using PrivateRoute.js 

@@ -16,7 +16,6 @@ import Welcome from "./components/pages/Welcome";
 import Alerts from './components/layout/Alerts';
 import store from './store';
 import { Provider } from 'react-redux';
-import { loadUser } from './actions/authActions';
 
 console.log('Above app.js');
 if (localStorage.token) {
@@ -27,7 +26,6 @@ const App = () => {
 
   useEffect(() => {
     console.log('useEffect in App.js')
-    loadUser();
   }, []);
 
   return (

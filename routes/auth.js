@@ -17,7 +17,7 @@ router.get('/', auth, async (req, res) => {
         // we are returning complete user object without password to maintain security.
         // if user doesn't exist in DB
         if (!user) {
-            return res.status(500).json({ message: 'User does not exist!' });
+            return res.status(404).json({ message: 'User does not exist!' });
         }
         // users exists. return the logged in user object
         res.status(200).json({ user });
