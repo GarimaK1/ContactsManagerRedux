@@ -22,7 +22,7 @@ function handleChange(e) {
 -- For deployment to Heroku:
 Created account, downloaded & installed heroku cli
 In server.js, added code block under "// Serve static assets in production"
-In congif folder, created file "production.json" for production use. 
+In config folder, created file "production.json" for production use. 
 In package.json, added script "heroku-postbuild" to build folder on heroku, after it is deployed.
 Go to home folder outside client, run heroku commands:
 heroku create, added remote.
