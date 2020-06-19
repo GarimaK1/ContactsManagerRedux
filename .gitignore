@@ -1,5 +1,4 @@
 # dependencies
-/config
 /node_modules
 /client/node_modules
 /.pnp
