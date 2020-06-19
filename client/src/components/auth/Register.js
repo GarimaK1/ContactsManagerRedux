@@ -15,8 +15,10 @@ const Register = ({ setAlert, register, clearErrors, auth: { error, isAuthentica
     let history = useHistory();
     
     useEffect(() => {
+        console.log('useEffect in Register')
         if (isAuthenticated) {
             // if user is already authenticted, don't show register. Redirect to Home page '/'.
+            console.log('isAuth: true. Redirecting to Home')
             history.push('/');
         }
         if (error === 'User already exists!') {

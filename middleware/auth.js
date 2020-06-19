@@ -21,7 +21,7 @@ module.exports = (req, res, next) => {
 
         req.user = decoded.user;
 
-        console.log("Auth successful!");
+        // console.log("Auth successful!");
         next();
 
     } catch (err) {

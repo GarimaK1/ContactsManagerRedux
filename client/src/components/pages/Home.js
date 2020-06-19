@@ -12,7 +12,8 @@ import { loadUser } from '../../actions/authActions';
 const Home = ({ loadUser }) => {
 
     useEffect(() => {
-        loadUser();
+        console.log('useEffect in Home')
+        // loadUser();
         // eslint-disable-next-line
     }, []);
 

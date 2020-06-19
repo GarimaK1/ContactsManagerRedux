@@ -1,4 +1,3 @@
-Problem: Loading incorrect contacts for users.
 Note to self:
 I think after the problems that I faced in setting alerts for this project,
 it is very important that you have a uniform method of conveying messages

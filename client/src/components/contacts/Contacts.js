@@ -4,10 +4,13 @@ import MySpinner from '../layout/Spinner';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { getContacts } from '../../actions/contactActions';
+import { loadUser } from '../../actions/authActions';
 
-const Contacts = ({ getContacts, contact: { contacts, filtered, loading } }) => {
+const Contacts = ({ getContacts, loadUser, contact: { contacts, filtered, loading } }) => {
 
     useEffect(() => {
+        console.log('useEffect in Contacts')
+        loadUser();
         getContacts();
         // eslint-disable-next-line
     }, [])
@@ -33,6 +36,7 @@ const Contacts = ({ getContacts, contact: { contacts, filtered, loading } }) => 
 
 Contacts.propTypes = {
     getContacts: PropTypes.func.isRequired,
+    loadUser: PropTypes.func.isRequired,
     contact: PropTypes.object
 }
 
@@ -42,4 +46,4 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps, { getContacts })(Contacts);
+export default connect(mapStateToProps, { getContacts, loadUser })(Contacts);

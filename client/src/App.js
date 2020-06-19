@@ -26,6 +26,7 @@ if (localStorage.token) {
 const App = () => {
 
   useEffect(() => {
+    console.log('useEffect in App.js')
     loadUser();
   }, []);
 

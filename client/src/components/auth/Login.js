@@ -15,8 +15,10 @@ const Login = ({ setAlert, login, clearErrors, auth: { isAuthenticated, error } 
     let history = useHistory();
 
     useEffect(() => {
+        console.log('useEffect in Login')
         if (isAuthenticated) {
             // if user is already authenticted, don't show login. Redirect to Home page '/'.
+            console.log('isAuth: true. Redirecting to Home')
             history.push('/app');
         }
         if (error === 'Invalid credentials!') {
