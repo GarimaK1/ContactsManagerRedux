@@ -31,9 +31,8 @@ const App = () => {
   return (
     <Provider store={store}>
       <Router>
-
         <Navbar />
-        <Container fluid style={{ width: '70%', marginTop: '0.75rem' }}>
+        <Container fluid style={{ width: '80%', marginTop: '0.75rem' }}>
           <Alerts />
           <Switch>
             <Route exact path="/" component={Welcome} />
@@ -43,7 +42,6 @@ const App = () => {
             <Route exact path='/login' component={Login} />
           </Switch>
         </Container>
-
       </Router>
     </Provider>
   );

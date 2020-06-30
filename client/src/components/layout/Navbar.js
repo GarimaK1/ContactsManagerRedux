@@ -1,4 +1,5 @@
 import React from 'react';
+import "./navbar.css";
 import PropTypes from 'prop-types';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
@@ -16,7 +17,7 @@ const MyNavbar = ({ myTitle, iconProp, clearContacts, logout, auth: { isAuthenti
     }
 
     const guestLinks = (
-        <div className="d-flex justify-content-end flex-fill"> 
+        <div className="d-flex justify-content-center justify-content-sm-end flex-fill"> 
             <Nav>
                 <Link to="/register" className="nav-link">
                     Register
@@ -36,9 +37,9 @@ const MyNavbar = ({ myTitle, iconProp, clearContacts, logout, auth: { isAuthenti
     );
 
     const authLinks = (
-        <div className="d-flex justify-content-end flex-grow-1"> 
-            <Navbar.Text className="pl-2">Hello</Navbar.Text>
-            {user && <Navbar.Text className="pr-2">, {user && user.name}!</Navbar.Text>}
+        <div className="d-flex justify-content-center justify-content-sm-end flex-grow-1"> 
+            <Navbar.Text className="pl-1">Hello</Navbar.Text>
+            {user && <Navbar.Text className="pr-1">, {user && user.name}!</Navbar.Text>}
            
             <Nav>
                 <Link to="/app" className="nav-link">
