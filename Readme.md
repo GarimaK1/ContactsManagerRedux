@@ -1,4 +1,8 @@
-## Readme.txt has full details and explanations. In case site takes time to load on Heroku, use this file for image previews. 
+## MERN = MongoDB, Express, React, Node application to manage contacts online. 
+
+## Redux for global state management.
+
+## Readme.txt has full details and explanations. If site takes time to load, see image previews: 
 
 ## Preview Images
 
