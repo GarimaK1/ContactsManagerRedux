@@ -9,9 +9,9 @@ from the backend API. That make setting alerts such a breeze.
 
 -- mapStateToProps is an arrow function and needs to return part of state to be provided as props to component
 
--- Event Handlers in React using Example:
-{/* <input type="text" onChange={handleChange} /> */}
-/* The handleChange function is an event handler.
+/* Event Handlers in React using Example:
+<input type="text" onChange={handleChange} />
+The handleChange function is an event handler.
 The event that the handler receives as a parameter is an object that contains a target field.
 This target is the DOM element that the event handler is bound to(here, the text input field).
 By accessing this field, we can determine what the target's value is changed to.
