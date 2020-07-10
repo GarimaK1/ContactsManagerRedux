@@ -6,9 +6,9 @@ import { connect } from 'react-redux';
 import { addContact, clearCurrent, updateContact, clearErrors } from '../../actions/contactActions';
 import { setAlert } from '../../actions/alertActions';
 
-// Event Handlers in React using Example:
-{/* <input type="text" onChange={handleChange} /> */}
-/* The handleChange function is an event handler.
+/* Event Handlers in React using Example:
+<input type="text" onChange={handleChange} />
+The handleChange function is an event handler.
 The event that the handler receives as a parameter is an object that contains a target field.
 This target is the DOM element that the event handler is bound to(here, the text input field).
 By accessing this field, we can determine what the target's value is changed to.

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory } from "react-router-dom";
+import { Link } from 'react-router-dom';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Container from "react-bootstrap/Container";
@@ -10,10 +11,10 @@ import { connect } from 'react-redux';
 import { clearErrors, register } from '../../actions/authActions';
 import { setAlert } from '../../actions/alertActions';
 
-const Register = ({ setAlert, register, clearErrors, auth: { error, isAuthenticated} }) => {    
+const Register = ({ setAlert, register, clearErrors, auth: { error, isAuthenticated } }) => {
 
     let history = useHistory();
-    
+
     useEffect(() => {
         console.log('useEffect in Register')
         if (isAuthenticated) {
@@ -49,47 +50,47 @@ const Register = ({ setAlert, register, clearErrors, auth: { error, isAuthentica
         e.preventDefault();
         if (name === '' || email === '' || password === '') {
             setAlert('Please enter all fields', 'danger');
-        } else 
-        if (password !== password2) {
-            setAlert('Password entries do not match', 'danger');
-        } else {
-            console.log('inside handlesubmit');
-            register({
-                name,
-                email,
-                password
-            });
-        }
+        } else
+            if (password !== password2) {
+                setAlert('Password entries do not match', 'danger');
+            } else {
+                console.log('inside handlesubmit');
+                register({
+                    name,
+                    email,
+                    password
+                });
+            }
     }
 
     return (
         <Container >
             <Row>
-                <Col sm={10} md={6} xl={4} style={{ margin: 'auto'}}>
+                <Col sm={10} md={6} xl={4} style={{ margin: 'auto' }}>
                     <h3 style={{ textAlign: 'center' }}>Register User</h3>
                     <Form onSubmit={handleSubmit}>
                         <Form.Group>
                             {/* <Form.Label>Enter Name:</Form.Label> */}
-                            <Form.Control 
-                                type="text" 
+                            <Form.Control
+                                type="text"
                                 // size="sm" 
-                                placeholder="Name" 
-                                name="name" 
-                                value={name} 
-                                onChange={handleChange} 
-                                required 
+                                placeholder="Name"
+                                name="name"
+                                value={name}
+                                onChange={handleChange}
+                                required
                             />
                         </Form.Group>
                         <Form.Group>
                             {/* <Form.Label>Enter Email:</Form.Label> */}
-                            <Form.Control 
-                                type="email" 
+                            <Form.Control
+                                type="email"
                                 // size="sm" 
-                                placeholder="Email" 
-                                name='email' 
-                                value={email} 
-                                onChange={handleChange} 
-                                required 
+                                placeholder="Email"
+                                name='email'
+                                value={email}
+                                onChange={handleChange}
+                                required
                             />
                         </Form.Group>
                         <Form.Group>
@@ -121,6 +122,14 @@ const Register = ({ setAlert, register, clearErrors, auth: { error, isAuthentica
                         <Button variant="dark" type="submit" block>
                             Register
                         </Button>
+                        <Form.Group controlId="HelpText">
+                            <Form.Text style={{ textAlign: 'center' }}>
+                                Or, <Link to="/login">
+                                    Login
+                                    </Link> 
+                                with dummy account to explore more!
+                            </Form.Text>
+                        </Form.Group>
                     </Form>
                 </Col>
             </Row>

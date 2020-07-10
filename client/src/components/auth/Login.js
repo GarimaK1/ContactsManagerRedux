@@ -10,6 +10,10 @@ import { connect } from 'react-redux';
 import { clearErrors, login} from '../../actions/authActions';
 import { setAlert } from '../../actions/alertActions';
 
+const pStyle = {
+    marginBottom: '0.2rem'
+}
+
 const Login = ({ setAlert, login, clearErrors, auth: { isAuthenticated, error } }) => {
 
     let history = useHistory();
@@ -85,6 +89,14 @@ const Login = ({ setAlert, login, clearErrors, auth: { isAuthenticated, error } 
                         <Button variant="dark" type="submit" block>
                             Login
                         </Button>
+                        <hr/>
+                        <Form.Group controlId="HelpText">
+                            <Form.Text style={{ textAlign: 'center' }}>
+                                <p style={pStyle}>Dummy account details to explore more:</p>
+                                <p style={pStyle}><strong>Login:</strong> gari@gmail.com</p>
+                                <p style={pStyle}><strong>Password:</strong> gari</p>
+                            </Form.Text>
+                        </Form.Group>
                     </Form>
                 </Col>
             </Row>
